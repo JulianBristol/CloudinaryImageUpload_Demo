@@ -1,6 +1,7 @@
 import './App.css';
 import './base.css';
 import Upload from './pages/Upload.jsx';
+import Gallery from './pages/Gallery.jsx';
 import {BrowserRouter as Router, Link, Route, Routes} from 'react-router-dom';
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
                     </ul>
                 </nav>
                 <Routes>
-                    <Route component={Upload} path="/upload" />
+                    <Route element={<Upload/>} path="/upload" />
+                    <Route element={<Gallery/>} path="/" />
                 </Routes>
             </Router>
         </div>
