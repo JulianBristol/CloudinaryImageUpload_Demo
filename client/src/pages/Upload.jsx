@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import emailjs from '@emailjs/browser';
+import Email from '../Email';
 
 const Upload = () => {
 
@@ -25,24 +25,9 @@ const Upload = () => {
         e.preventDefault();
         if(!previewSource) return;
         uploadImage(previewSource);
-        emailjs.send(
-          'service_9bwd41f',
-          'template_utceznv',
-          {
-            from_name: "Cloudinary Image Upload Demo",
-            to_name: 'Julian',
-            from_email: "bristoljulian.r+cloudinary@gmail.com",
-            to_email: 'bristoljulian.r+cloudinary@gmail.com',
-            message: "Someone just uploaded a file to your Cloudinary Image Upload Demo site.\nCheck it out at https://cloudinary_demo.com",
-          },
-          'OlSnfvmPWtVDrhrgi'
-        )
-        .then(() => {
-          alert('Image Uploaded Successfully');
-        }, (error) => {
-          console.log(error);
-          alert('There was an error uploading the image. Please try again later')
-        })
+        <Email
+        message="Someone just uploaded a file to your Cloudinary Image Upload Demo site.\nCheck it out at https://cloudinary_demo.com"
+        alert='Image Uploaded Successfully'/>
       };
 
     const uploadImage = async (base64EncodedImage) => {
