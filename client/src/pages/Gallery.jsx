@@ -23,14 +23,21 @@ const Gallery = () => {
   return (
     <div>
       <h1 className="title">Gallery</h1>
+      <p>All images have been uploaded by site users.</p>
+      <p>Please report any inappropiate images</p>
       {imageIds && imageIds.map((imageId, index) => (
         <Image
         key={index}
         cloudName="dfb1oxmpx"
         publicId={imageId}
+        loading="lazy"
         width="300"
-        crop="scale"
-        borderRadius="10"
+        height="300"
+        crop="fill"
+        style={{ borderRadius: '35px', margin: '10px', cursor: 'pointer' }}
+        onClick={() => {
+          console.log("image Clicked!")
+        }}
         />
       ))}
     </div>
