@@ -1,5 +1,6 @@
+import Axios from 'axios';
 import React, { useState } from 'react'
-import Email from '../Email';
+import { Email } from '../Email';
 
 const Upload = () => {
 
@@ -25,20 +26,19 @@ const Upload = () => {
         e.preventDefault();
         if(!previewSource) return;
         uploadImage(previewSource);
-        <Email
-        message="Someone just uploaded a file to your Cloudinary Image Upload Demo site.\nCheck it out at https://cloudinary_demo.com"
-        alert='Image Uploaded Successfully'/>
       };
 
     const uploadImage = async (base64EncodedImage) => {
-        try{
-            await fetch('/api/upload', {
-                method: 'POST',
-                body: JSON.stringify({data: base64EncodedImage}),
-                headers: {'Content-type': 'application/json'},
-            });
-        } catch(error){
-            console.error(error);
+        try {
+          const response = await Axios.post('/api/upload', {
+            data: base64EncodedImage,
+          });
+          alert(response.data.msg);
+          Email("Someone just uploaded a file to your Cloudinary Image Upload Demo site.\nCheck it out at https://cloudinary_demo.com")
+        } catch (error) {
+          console.error(error);
+          Email(`ERROR: Someone just attempted to uploaded a file to your Cloudinary Image Upload Demo site and failed.\n${error}`)
+          alert('Upload failed.\nPlease try again later');
         }
     }
 
