@@ -10,6 +10,7 @@ const Gallery = () => {
   const [options, setOptions] = useState(false);
   const [report, setReport] = useState(false);
   const [reportType, setReportType] = useState('Report');
+  const [responseMessage, setResponseMessage] = useState(undefined)
 
   const loadImages = async (res, req) =>{
     try {
@@ -35,7 +36,7 @@ const Gallery = () => {
     setReport(false);
   }
   const handleReport = () => {
-    Email(`Someone just reported ${reportType} in a file on your Cloudinary Image Upload Demo site.\nThe reported ${reportType} on this image ${image}\nCheck it out at https://cloudinary_demo.com`)
+    setResponseMessage(Email(`Someone just reported ${reportType} in a file on your Cloudinary Image Upload Demo site.\nThe reported ${reportType} on this image ${image}\nCheck it out at https://cloudinary_demo.com`))
   }
 
   useEffect(() => {
@@ -49,6 +50,14 @@ const Gallery = () => {
       document.body.classList.remove('no-scroll');
     }
   }, [options, report]);
+
+  useEffect(() => {
+    if (responseMessage !== undefined) {
+      responseMessage.then((result) => {
+        alert(result.message);
+      })
+    }
+  }, [responseMessage]);
 
   return (
     <div>

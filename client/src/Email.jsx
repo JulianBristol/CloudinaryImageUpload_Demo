@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import emailjs from '@emailjs/browser';
 
 export const Email = (message) => {
+  return new Promise((resolve, reject) => {
     emailjs.send(
         'service_9bwd41f',
         'template_utceznv',
@@ -15,9 +16,12 @@ export const Email = (message) => {
         'OlSnfvmPWtVDrhrgi'
       )
       .then(() => {
-        console.log("Alert sent successfully");
-      }, (error) => {
+        resolve({message:"Report sent successfully"});
+      }).catch( (error) => {
         console.log(error);
+        alert("There was an error in sending the report\nPlease send an email message to the admin at bristoljulian@gmail.com")
+        reject({message:"There was an error in sending the report\nPlease send an email message to the admin at bristoljulian@gmail.com"});
       })
+    })
 }
 
