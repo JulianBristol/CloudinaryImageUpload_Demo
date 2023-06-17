@@ -5,7 +5,7 @@ import { Image } from 'cloudinary-react'
 import { Email } from '../Email';
 
 const Gallery = () => {
-  const [imageIds, setImageIds] = useState('');
+  /* const [imageIds, setImageIds] = useState('');
   const [image, setImage] = useState('');
   const [options, setOptions] = useState(false);
   const [report, setReport] = useState(false);
@@ -57,14 +57,14 @@ const Gallery = () => {
         alert(result.message);
       })
     }
-  }, [responseMessage]);
+  }, [responseMessage]); */
 
   return (
     <div>
       <h1 className="title">Gallery</h1>
       <p>All images have been uploaded by site users.</p>
       <p>Please report any inappropiate images</p>
-      {imageIds && imageIds.map((imageId, index) => (
+      {/* {imageIds && imageIds.map((imageId, index) => (
         <Image
         key={index}
         cloudName="dfb1oxmpx"
@@ -133,12 +133,12 @@ const Gallery = () => {
           <NewReport reportType={reportType}  handleReport={handleReport}/>
           }
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
 
-const DefaultReportOptions = ({setReportType}) => (<>
+/* const DefaultReportOptions = ({setReportType}) => (<>
   <p>Please Select an option</p>
           <ul>
             <li onClick={() => {setReportType('Nudity')}}>Nudity</li>
@@ -155,6 +155,6 @@ const DefaultReportOptions = ({setReportType}) => (<>
     <p>Would you like to report <em>{reportType}</em> in this photo?</p>
     <button className='reportButton' onClick={() => {handleReport()}}>Report</button>
     </>
-    )
+    ) */
 
 export default Gallery

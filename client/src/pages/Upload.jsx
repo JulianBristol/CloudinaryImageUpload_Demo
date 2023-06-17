@@ -4,7 +4,7 @@ import { Email } from '../Email';
 
 const Upload = () => {
 
-    const [previewSource, setPreviewSource] = useState('');
+    /* const [previewSource, setPreviewSource] = useState('');
 
     const handleFileInputChange = (e) => {
         const file = e.target.files[0];
@@ -37,13 +37,13 @@ const Upload = () => {
           Email(`ERROR: Someone just attempted to uploaded a file to your Cloudinary Image Upload Demo site and failed.\n${error}`)
           alert('Upload failed.\nPlease try again later');
         }
-    }
+    } */
 
   return (
     <div>
       <h1>Upload</h1>
       <p>Please upload an image file</p>
-      <form 
+      {/* <form 
       className='form'
       onSubmit={handleSubmitFile}>
         <input type="file" name="image"
@@ -54,7 +54,7 @@ const Upload = () => {
       </form>
       {previewSource && (
         <img src={previewSource} alt={"User selected file"} style={{height: '300px'}}/>
-      )}
+      )} */}
     </div>
   )
 }
