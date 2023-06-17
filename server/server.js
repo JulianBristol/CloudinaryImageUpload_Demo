@@ -9,7 +9,7 @@ app.use(express.urlencoded({ limit: '50mb', extended: true}));
 app.get('/api/images', async (req, res) => {
     const { resources } = await cloudinary.search
         .expression('dev_upload_preset')
-        .sort_by('size')
+        .sort_by('updated_at', 'desc')
         .max_results(30)
         .execute();
 

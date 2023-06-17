@@ -12,15 +12,15 @@ const Gallery = () => {
   const [reportType, setReportType] = useState('Report');
   const [responseMessage, setResponseMessage] = useState(undefined)
 
-  const loadImages = async (res, req) =>{
+  const loadImages = async () => {
     try {
-      const res = await fetch('/api/images');
-      const data = await res.json();
+      const response = await fetch('/api/images');
+      const data = await response.json();
       setImageIds(data);
     } catch (error) {
       console.error(error);
     }
-  }
+  };
 
   const handleOpenOptions = (e) => {
     setImage(e.target.src);
