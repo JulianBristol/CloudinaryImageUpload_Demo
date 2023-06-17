@@ -27,11 +27,11 @@ const Upload = () => {
 
     const uploadImage = async (base64EncodedImage) => {
         try {
-          const response = await Axios.post('/api/upload', {
+          const response = await Axios.post('/.netlify/functions/serverFunctions', {
             data: base64EncodedImage,
           });
           alert(response.data.msg);
-          Email("Someone just uploaded a file to your Cloudinary Image Upload Demo site.\nCheck it out at https://cloudinary_demo.com")
+          Email("Someone just uploaded a file to your Cloudinary Image Upload Demo site.\nCheck it out at https://clouduploud.netlify.app")
         } catch (error) {
           console.error(error);
           Email(`ERROR: Someone just attempted to uploaded a file to your Cloudinary Image Upload Demo site and failed.\n${error}`)
