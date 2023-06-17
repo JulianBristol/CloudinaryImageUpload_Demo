@@ -1,6 +1,4 @@
-import Axios from 'axios';
-import React, { useState } from 'react'
-import { Email } from '../Email';
+import React from 'react'
 
 const Upload = () => {
 

@@ -1,8 +1,4 @@
 import React from 'react'
-import { useEffect } from 'react';
-import { useState } from 'react'
-import { Image } from 'cloudinary-react'
-import { Email } from '../Email';
 
 const Gallery = () => {
   /* const [imageIds, setImageIds] = useState('');
