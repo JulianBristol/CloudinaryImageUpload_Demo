@@ -103,7 +103,7 @@ const Gallery = () => {
           />
             <img
             src={image}
-            alt='User Selected Image'
+            alt='User Selected file'
             />
           </div>
 
