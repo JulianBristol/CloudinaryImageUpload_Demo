@@ -14,7 +14,7 @@ const Gallery = () => {
 
   const loadImages = async () => {
     try {
-      const response = await fetch('/api/images');
+      const response = await fetch('../../.netlify/functions/serverFunctions');
       const data = await response.json();
       setImageIds(data);
     } catch (error) {
@@ -64,7 +64,7 @@ const Gallery = () => {
       <h1 className="title">Gallery</h1>
       <p>All images have been uploaded by site users.</p>
       <p>Please report any inappropiate images</p>
-      {imageIds && imageIds.map((imageId, index) => (
+      {imageIds && imageIds?.map((imageId, index) => (
         <Image
         key={index}
         cloudName="dfb1oxmpx"
