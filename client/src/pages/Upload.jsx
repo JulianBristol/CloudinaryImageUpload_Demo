@@ -53,7 +53,7 @@ const Upload = () => {
         <button type="submit" className='btn'>Upload Image</button>
       </form>
       {previewSource && (
-        <img src={previewSource} alt={"User selected file"} style={{height: '300px'}}/>
+        <img className='previewImg' src={previewSource} alt={"User selected file"} />
       )}
     </div>
   )

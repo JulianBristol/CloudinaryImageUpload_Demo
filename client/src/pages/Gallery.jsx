@@ -80,7 +80,7 @@ const Gallery = () => {
         />
       ))}
       <div className='modal_BG'
-      style={{ display: `${options || report ? 'block' : "none"}` }}
+      style={{ display: `${options || report ? 'flex' : "none"}` }}
       onClick={() => {
         handleCloseOptions()
         handleCloseReport()

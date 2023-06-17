@@ -1,11 +1,13 @@
 .no-scroll{
   overflow: hidden;
 }
-.gallery{
-
+.previewImg{
+  width: 100%
 }
 .modal_BG{
   position: fixed;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   top: 0;
@@ -14,13 +16,10 @@
 }
 .modal{
   position: absolute;
+  max-width: calc(100% - 30px);
   width: 500px;
   height: auto;
   padding: 20px;
-  margin-left: -250px;
-  left: 50%;
-  margin-top: -350px;
-  top: 50%;
   background-color: #242526;
   border: 1px solid #ffffffd3;
   border-radius: 12px;
@@ -30,10 +29,6 @@
   width: 500px;
   height: 500px;
   padding: 20px;
-  margin-left: -250px;
-  left: 50%;
-  margin-top: -250px;
-  top: 50%;
   background-color: #242526;
   border: 1px solid #ffffffd3;
   border-radius: 12px;
@@ -45,7 +40,7 @@
 
 .modalImg img{
   margin-top: 25px;
-  width: 460px;
+  width: 100%;
 }
 .modalTitle{
   border-bottom: 1px solid #e4e6eb;
@@ -138,8 +133,3 @@
   .reportButton:active {
     opacity: .5;
   }
-@media (max-width: 786px){
-  .gallery {
-    
-  }
-}
